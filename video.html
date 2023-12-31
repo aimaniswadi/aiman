@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Experience</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    body { font-family: "Arial", sans-serif; }
+    .mySlides { display: none; }
+    body {
+      background-image: url('./img/background.jpeg'); 
+      background-size: cover; 
+      background-repeat: no-repeat; 
+      background-attachment: fixed; 
+    }
+
+    video {
+      width: 35%; /* Adjust the width as needed, for example, 50% or a specific pixel value */
+      height: auto; /* This ensures that the height adjusts proportionally to the width */
+    }
+  </style>
+</head>
+<body>
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="bio.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">BIODATA</a>
+    <a href="exp.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">EXPERIENCE</a>
+    <a href="edu.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">EDUCATION</a>
+    <a href="family.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FAMILY</a>
+    <a href="video.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">GALLERY</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">CONTACT <i class="fa fa-caret-down"></i></button>     
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="http://www.instagram.com/md.aiiman" class="w3-bar-item w3-button">Instagram</a>
+        <a href="http://wa.me/60139058211" class="w3-bar-item w3-button">Whatsapp</a>
+      </div>
+    </div>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+    
+<div class="w3-container w3-content w3-center w3-padding-64">
+  <h2 class="w3-wide">GALLERY</h2>
+  <p class="w3-opacity"><i></i></p>
+
+  <!-- Video Player -->
+  <video controls style="margin: 0 auto;">
+    <source src="./img/vid1.MP4" type="video/mp4" style="width:80%">
+    Your browser does not support the video tag.
+  </video>
+    <center>
+        <div class="slider-container">
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <img class="slide" src="./img/bio3.jpg" alt="Image 1" style="width:80%">
+        <img class="slide" src="./img/bio5.JPG" alt="Image 2" style="width:80%">
+        <img class="slide" src="./img/bio6.JPG" alt="Image 3" style="width:80%">
+        <button class="next" onclick="changeSlide(1)">❯</button>
+        </center>
+
+    <script>
+        let slideIndex = 1;
+        showSlide(slideIndex);
+
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        function showSlide(n) {
+            let slides = document.getElementsByClassName("slide");
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</div>
+  </div>
+</body>
+</html>
